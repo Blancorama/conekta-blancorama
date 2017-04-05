@@ -109,7 +109,8 @@ class ConektaController(http.Controller):
         payment_acquirer = request.env['payment.acquirer']
         conekta_acq = payment_acquirer.sudo().search(
             [('provider', '=', 'conekta')])
-        conekta.api_key = conekta_acq.conekta_private_key
+        # conekta.api_key = conekta_acq.conekta_private_key
+        conekta.api_key = 'key_8dtZqHSeqQWXDBYD9r7osg'
         params = self.create_params('conekta')
         try:
 

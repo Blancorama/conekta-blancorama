@@ -229,9 +229,7 @@ msgstr "Orden de ventas"
 #. module: payment_conekta
 #: model:payment.acquirer,pre_msg:payment_conekta.payment_acquirer_conekta
 msgid ""
-"You will be redirected to the Conekta website after clicking on payment "
-"button."
-msgstr "Será redireccionado a la pagina web de Conekta despues de hacer click en el boton pagar."
+msgstr ""
 
 #. module: payment_conekta
 #: model:ir.model,name:payment_conekta.model_conekta_refund_wizard

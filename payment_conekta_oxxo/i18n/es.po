@@ -58,8 +58,8 @@ msgstr "Conekta: Los datos recibidos de referencia %s"
 
 #. module: payment_conekta_oxxo
 #: model:payment.acquirer,pre_msg:payment_conekta_oxxo.payment_acquirer_conekta_oxxo
-msgid "More information will be provided after choosing the payment method."
-msgstr "Más información será proporcionada después de elegir el método de pago ."
+msgid ""
+msgstr ""
 
 #. module: payment_conekta_oxxo
 #: model:payment.acquirer,name:payment_conekta_oxxo.payment_acquirer_conekta_oxxo
