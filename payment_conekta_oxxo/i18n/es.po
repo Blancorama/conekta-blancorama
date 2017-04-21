@@ -40,7 +40,7 @@ msgstr "<span><i>Cancel,</i>Su pagó se ha cancelado.</span> "
 msgid ""
 "<span><i>Done,</i> Your online payment has been successfully processed. "
 "Thank you for your order.</span>"
-msgstr "<span><i>Hecho,</i>Tu pago en linea ha sido correctamente procesado. Gracias por tu pago.</span>"
+msgstr "<span><i>Hecho,</i>Tu pago en linea ha sido correctamente procesado. ¡Gracias por tu compra!</span>"
 
 #. module: payment_conekta_oxxo
 #: model:payment.acquirer,error_msg:payment_conekta_oxxo.payment_acquirer_conekta_oxxo

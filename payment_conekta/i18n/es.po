@@ -55,7 +55,7 @@ msgstr "<span><i>Cancelar,</i>Su pago ha sido cancelado.</span>"
 msgid ""
 "<span><i>Done,</i> Your online payment has been successfully processed. "
 "Thank you for your order.</span>"
-msgstr "<span><i>Hecho,</i>Tu pago en linea ha sido correctamente procesado. Gracias por tu pago.</span>"
+msgstr "<span><i>Hecho,</i>Tu pago en linea ha sido correctamente procesado. ¡Gracias por tu compra!</span>"
 
 #. module: payment_conekta
 #: model:payment.acquirer,error_msg:payment_conekta.payment_acquirer_conekta
@@ -141,8 +141,8 @@ msgstr "Nombre desplegado"
 
 #. module: payment_conekta
 #: model:ir.ui.view,arch_db:payment_conekta.conekta_acquirer_button
-msgid "Expiration date (MM/YYYY)"
-msgstr "Fecha de Expiracion (MM/YYYY)"
+msgid "Expiration date (MM/YY)"
+msgstr "Fecha de Expiracion (MM/YY)"
 
 #. module: payment_conekta
 #: model:ir.model.fields,field_description:payment_conekta.field_conekta_refund_wizard_id
