@@ -22,13 +22,16 @@ class ConektaController(http.Controller):
         res = tx_obj.sudo().form_feedback(data, 'conekta')
         return res
 
+    def get_total_with_commision(self,amount):
+        return amount + amount * 0.07
+
     def create_params(self, acquirer):
         so_id = request.session['sale_order_id']
         so = request.env['sale.order'].sudo().search([('id', '=', so_id)])
         params = {}
         params['description'] = _('%s Order %s' % (so.company_id.name,
                                                    so.name))
-        params['amount'] = int(so.amount_total * 100)
+        params['amount'] = int(self.get_total_with_commision(so.amount_total) * 100)
         params['currency'] = so.currency_id.name
         params['reference_id'] = so.name
         if acquirer == 'conekta':
@@ -61,7 +64,7 @@ class ConektaController(http.Controller):
             line_items.append(item)
             item['name'] = order_line.product_id.name
             item['description'] = (order_line.product_id.description_sale or "")
-            item['unit_price'] = int(order_line.price_unit * 100)
+            item['unit_price'] = int(self.get_total_with_commision(order_line.price_unit) * 100)
             item['quantity'] = order_line.product_uom_qty
             item['sku'] = order_line.product_id.default_code
             item['category'] = order_line.product_id.categ_id.name
@@ -112,9 +115,7 @@ class ConektaController(http.Controller):
         conekta.api_key = conekta_acq.conekta_private_key
         params = self.create_params('conekta')
         try:
-
             response = conekta.Charge.create(params)
-            
         except conekta.ConektaError as error:
             return error.message['message_to_purchaser']
         self.conekta_validate_data(response)

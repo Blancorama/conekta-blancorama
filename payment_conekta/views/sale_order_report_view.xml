@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="sale_order_report_conekta" inherit_id="blancorama_product.sale_report_saleorder_document_blancorama">
+
+            <xpath expr="//div[@name='total']" position="after">
+                <t t-if="doc.payment_acquirer_id.name">
+                    <table class="table table-condensed mt32 mb32">
+                        <thead>
+                            <tr>
+                                <th>Información de Pago</th>
+                                <th class="text-right">Total</th>
+                            </tr>
+                       </thead>
+                       <tbody class="sale_tbody">
+                            <tr>
+                                <td>
+                                    <strong>Método de Pago:</strong> <t t-esc="doc.payment_acquirer_id.name"/><br />
+                                    <strong>Detalles de Pago:</strong>
+                                    <t t-if="doc.payment_acquirer_id.auto_confirm == 'none'">
+                                        <t t-raw="doc.payment_acquirer_id.pending_msg"/>
+                                    </t>
+                                    <t t-if="doc.payment_acquirer_id.auto_confirm == 'at_pay_confirm'">
+                                        <t t-if="doc.payment_tx_id.state == 'pending'">
+                                            <t t-raw="doc.payment_acquirer_id.pending_msg"/>
+                                        </t>
+                                        <t t-if="doc.payment_tx_id.state == 'done'">
+                                            <t t-raw="doc.payment_acquirer_id.done_msg"/>
+                                        </t>
+                                        <t t-if="doc.payment_tx_id.state == 'cancel'">
+                                            <t t-raw="doc.payment_acquirer_id.cancel_msg"/>
+                                        </t>
+                                        <t t-if="doc.payment_tx_id.state == 'error'">
+                                            <t t-raw="doc.payment_acquirer_id.error_msg"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="doc.compute_total(doc.amount_total)"
+                                        t-esc-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </xpath>
+
+        </template>
+    </data>
+</odoo>

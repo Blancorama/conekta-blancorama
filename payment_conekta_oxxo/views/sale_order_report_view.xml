@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <template id="sale_order_report_conekta_oxxo" inherit_id="sale.report_saleorder_document">
+        <template id="sale_order_report_conekta_oxxo" inherit_id="blancorama_product.sale_report_saleorder_document_blancorama">
             <xpath expr="//div[@class='col-xs-5 col-xs-offset-1']" position="inside">
                 <span t-if="doc.payment_tx_id.conekta_oxxo_barcode_url">
                     <img t-if="doc.payment_tx_id.conekta_oxxo_barcode_url" t-att-src="doc.payment_tx_id.conekta_oxxo_barcode_url"/>

@@ -2,7 +2,7 @@
 <odoo>
     <data noupdate="0">
         <record id="payment_acquirer_conekta_oxxo" model="payment.acquirer">
-            <field name="name">DineroMail</field>
+            <field name="name">Oxxo</field>
             <field name="provider">conekta_oxxo</field>
             <field name="company_id" ref="base.main_company"/>
             <field name="view_template_id" ref="payment_conekta_oxxo.conekta_oxxo_acquirer_button"/>
@@ -10,7 +10,9 @@
             <field name="environment">test</field>
             <field name="pre_msg"><![CDATA[<p></p>]]></field>
             <field name="pending_msg"><![CDATA[
-<p>Pending, Your order has been successfully processed. You have to print this order, take it to your nearest OXXO and use the barcode to make the payment. Note: Consider that OXXO will charge a fee for this transaction. Service provided by Conekta.</p>]]></field>
+            Pendiente, su orden se ha procesado correctamente . Usted tiene que imprimir esta orden , llevarlo a su OXXO más cercana y utilizar el código de barras para realizar el pago. <p>Nota : Tenga en cuenta que OXXO cargará una tarifa para esta transacción . Servicio proporcionado por Conekta.</p><p>Nota : El pago puede tardar 24 horas en reflejarse</p>]]></field>
+            <field name="done_msg"><![CDATA[
+            Pendiente, su orden se ha procesado correctamente . Usted tiene que imprimir esta orden , llevarlo a su OXXO más cercana y utilizar el código de barras para realizar el pago. <p>Nota : Tenga en cuenta que OXXO cargará una tarifa para esta transacción . Servicio proporcionado por Conekta.</p><p>Nota : El pago puede tardar 24 horas en reflejarse</p>]]></field>
         </record>
     </data>
 </odoo>
